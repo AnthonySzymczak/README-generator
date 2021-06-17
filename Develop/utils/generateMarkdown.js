@@ -2,22 +2,19 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  
-  /*  if 
-      ${andswers.license} = '' 
-    return`
-    ![badge](https://img.shields.io/badge/license-${answers.license}-yellow)
+  for(let i = 0; i<license.license.length;i++)
+  {
+
+ //     ${data.license} = '' 
+    return ` 
+    ![badge](https://img.shields.io/badge/license-${data.license}-yellow)
+    [${data.license}](https://opensource.org/licenses/${data.license})
     
     `
-    else{
-    return `[]`  
-    
-     };
-  
-  */ 
-  
-}
 
+    //https://opensource.org/licenses
+}
+}
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
@@ -32,31 +29,39 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-  <h1>${answers.title}</h1>
+  return `
+  # ${data.title}
   
-  ##Table of Contents :
-  -[License](#license)
-  -[Descption of application](#description)
-  -[Usage of application](#usage)
-  -[Packages needed for installation](#install)
-  -[Contributers of this application](#contributers)
-  -[Tests Ran](#allTest)
-
-  ## License
-  ${answers.license}
   ## Description of application
-  ${answers.description}
-  ## Usage of application
-  ${answers.usage}
+  ${data.description}
+
+  ##Table of Contents :
+  -[Packages needed for installation](#install)
+  -[Usage of application](#usage)
+  -[License](#license)
+  -[Contributors of this application](#contributors)
+  -[Tests Ran](#allTests)
+  -[Questions](#questions)
+
   ## Packages needed for installation
-  ${answers.install}
+  ${data.install}
+  ## Usage of application
+  ${data.usage}
+  ## License
+  ${data.license}
   ## Contributers of this application
-  ${answers.contributers}
+  ${data.contributers}
   ## Tests Ran
-  ${answers.allTest}
+  ${data.allTest}
+
+  ## Have questions for the developer? Here are their links! 
 
 
+  [Link to the Repository]()
+  [Website]()
+
+  If you have any further questions, you can reach me at the following email
+  : <${data.email}>
 `;
 }
 
