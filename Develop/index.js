@@ -5,7 +5,6 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 
-let i = 0;
 const questions =[
         {
             type: 'input',
@@ -55,7 +54,8 @@ const questions =[
                 'GNU General Public License v2.0',
                 'GNU Lesser General Public License v2.1',
                 'Mozilla Public License 2.0',
-                'The Unlicense'
+                'The Unlicense',
+                'No license'
             ]},
             {
                 type: 'input',
@@ -74,12 +74,14 @@ const questions =[
 
 
             const promptUser = () => {
-                return inquirer.prompt(questions).then(projectData => {
-                    renderLicenseLink(projectData);
-                    return writeToFile("README",projectData);
+                return inquirer.prompt(questions).then(data => {
+                    return writeToFile("README", data);
                     
                 })
             };
+
+
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName +'.md', generateMarkdown(data), function(err) {
