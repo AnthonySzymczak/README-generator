@@ -34,7 +34,7 @@ const questions =[
         },
         {
             type: 'input',
-            name: 'allTests',
+            name: 'tests',
             message: 'Are there any specific tests you or your contributers have run? List them here: '
         },
         {
