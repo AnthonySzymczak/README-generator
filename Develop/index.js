@@ -65,6 +65,12 @@ const questions =[
             },
             {
                 type: 'input',
+                name: 'myWebsite',
+                message: 'Enter your professional Website here: '
+
+            },
+            {
+                type: 'input',
                 name: 'myEmail',
                 message: 'Enter your professional e-mail here: '
 
