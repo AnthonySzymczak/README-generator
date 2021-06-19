@@ -42,7 +42,7 @@ const questions =[
             name: 'license',
             message: 'Will this project include a license? ',
             choices: [
-                'Apache Liscense 2.0',
+                'Apache License 2.0',
                 'GNU General Public License v3.0',
                 'MIT license',
                 'BSD 2-Clause "Simplified" License',
