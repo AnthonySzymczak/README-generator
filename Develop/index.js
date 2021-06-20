@@ -1,42 +1,51 @@
 // TODO: Include packages needed for this application
 
+//Variable declaration
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
-// TODO: Create an array of questions for user input
 
+// TODO: Create an array of questions for user input
+// Questions Array for User input
 const questions =[
+    //Q1
         {
             type: 'input',
             name: 'title',
             message: 'What is the title of this project? : '
         },
+    //Q2
         {
             type:'input',
             name: 'description',
             message: 'Please write a description of your project: '
 
         },
+    //Q3
         {
             type: 'input',
             name:'usage',
             message:'What is the "user story" or usage of this project : ',
         },
+    //Q4
         {
             type: 'input',
             name: 'install',
             message: 'Please mention your installation instructions :'
         },
+    //Q5
         {
             type: 'input',
             name:'contributors',
             message:'Who contributed to this project? List them here:'
         },
+    //Q6
         {
             type: 'input',
             name: 'tests',
             message: 'Are there any specific tests you or your contributers have run? List them here: '
         },
+    //Q7
         {
             type: 'list',
             name: 'license',
@@ -57,18 +66,21 @@ const questions =[
                 'The Unlicense',
                 'No license'
             ]},
+    //Q8
             {
                 type: 'input',
                 name: 'myGithub',
                 message: 'Enter your Github repository link here: '
 
             },
+    //Q9
             {
                 type: 'input',
                 name: 'myWebsite',
-                message: 'Enter your professional Website here: '
+                message: 'Enter your Website link here: '
 
             },
+    //Q10
             {
                 type: 'input',
                 name: 'myEmail',
@@ -78,7 +90,7 @@ const questions =[
             ];
         
 
-
+//Prompt User declaration, then write to file
             const promptUser = () => {
                 return inquirer.prompt(questions).then(data => {
                     return writeToFile("README", data);
@@ -89,6 +101,7 @@ const questions =[
 
 
 // TODO: Create a function to write README file
+//Function That Writes inputs to README.md
 function writeToFile(fileName, data) {
     fs.writeFile(fileName +'.md', generateMarkdown(data), function(err) {
 

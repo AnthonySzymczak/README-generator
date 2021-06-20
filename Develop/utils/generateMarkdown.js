@@ -1,3 +1,15 @@
+/*
+Main sections of code used:
+
+Functions:
+
+renderLicenseBadge
+renderLicenseLink
+renderLicenseSection
+generateMarkdown
+
+
+*/ 
 // TODO: Create a function that returns a license badge based on which license is passed in, If there is no license, return an empty string
 function renderLicenseBadge(license) {
 
@@ -84,6 +96,7 @@ if(license === 'Apache License 2.0'){
     return ` `
   }
 };
+
 //References for shields and licenses
 //[shields.io](https://shields.io/).  
 //https://opensource.org/licenses
@@ -203,8 +216,7 @@ ${renderLicenseLink(license)}
   function generateMarkdown(data) {
     return `
 # ${data.title}
-<br></br>
-${renderLicenseBadge(license)}  
+
 ## Description of application
 ${data.description}
 
